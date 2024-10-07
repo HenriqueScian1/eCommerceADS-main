@@ -1,0 +1,80 @@
+/* Painel da tela de login */
+.login-body .login-panel {
+    background-color: rgba(0, 0, 0, 0.80);
+    border-top: 4px solid #3c439b;
+    padding: 0 70px 20px 70px;
+    height: 370px;
+    width: 560px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -280px;
+    margin-top: -175px;
+    border-radius: 20px;
+}
+
+/* Acesso restrito na tela de login */
+.login-body .login-panel h1 {
+    display: inline-block;
+    font-size: 16px;
+    background-color: #feedbc;
+    margin: 0 0 16px 0;
+    color: #666666;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Texto no painel de login */
+.login-body .login-panel h3 {
+    color: #c8c8c8;
+    margin: 0 0 0 0;
+    font-size: 16px;
+    margin: 20px 0 0 0;
+}
+
+/* espaçamento entre as linhas login */
+.login-body .login-panel label {
+    display: block;
+    color: #c8c8c8;
+    margin: 20px 0 7px 0;
+}
+
+/* Inputs de login e senha */
+.login-body .login-panel input {
+    background: transparent;
+    border: 1px solid #dadada;
+    color: #dadada;
+    font-size: 14px;
+    padding: 0.429em;
+    border-radius: 5px;
+}
+
+/* hover dos inputs login */
+.login-body .login-panel input:hover, .login-body .login-panel input:focus {
+    outline: 0 none;
+    border-color: #4682B4;
+    
+}
+
+/* botao de entrar no login */
+.login-body .login-panel button {
+/*    margin: 20px 0 0 0;
+    display: block;
+    width: 120px;*/
+}
+
+@media screen and (max-width: 40em) {
+    .login-body .login-topbar {
+        padding: 15px 70px 15px 70px;
+    }
+    .login-body .login-panel {
+        left: 0;
+        top: 25%;
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .login-body .login-panel input {
+        width: 100%;
+    }
+}

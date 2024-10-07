@@ -1,0 +1,9 @@
+.formulario > tbody > tr > td, td.formulario {
+    border: none !important;
+    padding: 4px !important;
+    background: none !important;
+}
+
+.formulario > tbody > tr > td:not(.alinhaTopo):not(.alinhaFundo) {
+    vertical-align: middle !important;
+}

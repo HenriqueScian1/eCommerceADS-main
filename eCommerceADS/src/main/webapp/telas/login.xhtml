@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        </f:facet>
+        <title>Descomplica - Login</title>
+        <link rel="shortcut icon" href="/resources/icones/eCommerce-JanelaWeb.ico"/>
+        <h:outputStylesheet name="cssGeral.css" library="css" />
+        <h:outputStylesheet name="login.css" library="css" />
+        <style type="text/css">
+            /*Imagem de fundo */
+            body {
+                background-image: url(#{loginBean.retornarImagemFundo()});
+            }
+
+            body .ui-panelgrid .ui-panelgrid-cell {
+                border: 1px solid #dee2e6;
+                background: none;
+                color: #495057;
+                padding: 1rem
+            }
+        </style>
+        <script type="text/javascript">
+            function bloquearBotao(id) {
+                var btn = document.getElementById(id);
+                btn.disabled = true;
+                btn.classList.toggle('ui-state-disabled');
+            }
+
+            function capsLookAtivo() {
+                var e = window.event;
+                if (e.getModifierState('CapsLock')) {
+                    document.getElementById('aviso_caps_lock').style.visibility = 'visible';
+                } else {
+                    document.getElementById('aviso_caps_lock').style.visibility = 'hidden';
+                }
+            }
+        </script>
+    </h:head>
+    <h:body styleClass="login-body">
+        <h:form>
+            <div id="painelLogin" class="login-panel">
+                <p:growl escape="true" showDetail="true" />
+
+                <h3><p>Bem-vindo(a) utilize o formulário abaixo para entrar.</p></h3>
+
+
+                <p:outputLabel value="E-mail ou CPF"/>
+                <p:inputText id="login" value="#{loginBean.login}"  autocomplete="off"  size="50" />
+
+                <p:outputLabel value="Senha"/>
+                <p:password id="senha" value="#{loginBean.senha}"  size="50" onkeyup="capsLookAtivo()" onclick="capsLookAtivo()"  autocomplete="off" />
+
+
+                <div id="aviso_caps_lock" style="visibility: hidden">
+                    <h3><p width="100%" >Caps Lock ativada.</p></h3>
+                </div>
+
+                <p:panelGrid style="width: 100%" styleClass="formulario">
+                    <p:row>
+                        <p:column>
+                            <p:commandButton id="btnEntrar" process="@this,login,senha"  value="Entrar" action="#{loginBean.logar()}" style="width: 120px;" />
+                        </p:column>
+                    </p:row>
+                </p:panelGrid>
+            </div>
+        </h:form>
+    </h:body>
+</html>
