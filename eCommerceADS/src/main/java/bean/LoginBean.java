@@ -86,7 +86,7 @@ public class LoginBean implements Serializable {
             if (usuarioLogado != null) {
                 SessionContext.getInstance().setAttribute("usuarioLogado", usuarioLogado);
                 SessionContext.getInstance().setAttribute("userName", usuarioLogado.getNome());
-                SessionContext.getInstance().getExternalContext().redirect("/telas/home.xhtml");
+                SessionContext.getInstance().getExternalContext().redirect("/telas/cadastroGames.xhtml");
             }
         } catch (Exception ex) {
 
